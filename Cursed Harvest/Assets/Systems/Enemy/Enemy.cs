@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamagable
 {
     AStarNavigation nav;
     public GameObject target;
@@ -11,16 +11,15 @@ public class Enemy : MonoBehaviour
     Node targetNode;
     List<Node> path = new List<Node>();
     Stats stats;
+    Rigidbody2D rb;
 
-    // Start is called before the first frame update
     private void OnEnable()
     {
         nav = FindObjectOfType<AStarNavigation>();
         target = Player_Controller.instance.gameObject;
         stats = GetComponent<Stats>();
+        rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         Navigate();
@@ -51,5 +50,17 @@ public class Enemy : MonoBehaviour
         if (inputValue.x > 0) { transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); }
         else if (inputValue.x < 0) { transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); }
     }
+    #endregion
+
+    #region COMBAT
+
+    public void Take_Damage(Stats source)
+    {
+        Combat.DamageTarget(source, this.stats);
+
+        Vector2 directionOfDamage = (transform.position - source.transform.position).normalized;
+        rb.AddForce(directionOfDamage * source.knockback);
+    }
+
     #endregion
 }

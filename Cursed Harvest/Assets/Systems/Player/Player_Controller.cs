@@ -10,6 +10,7 @@ public class Player_Controller : MonoBehaviour
     public Player_Control_Settings settings;
     public Rigidbody2D rb;
     public Vector2 direction;
+    public Animator animator;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class Player_Controller : MonoBehaviour
             input = new Controls();
             input.Player.Move.performed += SetDirection;
             input.Player.Move.canceled += SetDirection;
+            input.Player.Attack.performed += Attack;
             input.Player.Enable();
         }
     }
@@ -39,6 +41,8 @@ public class Player_Controller : MonoBehaviour
         {
             Move(direction);
         }
+        Vector2 pointer = Camera.main.ScreenToWorldPoint(input.Player.Pointer.ReadValue<Vector2>());
+        CheckFlip(pointer - (Vector2)transform.position);
     }
 
     public void SetDirection(InputAction.CallbackContext ctx)
@@ -50,11 +54,22 @@ public class Player_Controller : MonoBehaviour
         temp.y = Mathf.Abs(temp.y) > (v_deadzone/100) ? temp.y : 0;
         temp.x = Mathf.Abs(temp.x) > (h_deadzone/100) ? temp.x : 0;
 
-        direction = temp;       
+        direction = temp;
+    }
+
+    void CheckFlip(Vector2 inputValue)
+    {
+        if (inputValue.x < 0) { transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); }
+        else if (inputValue.x > 0) { transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); }
     }
 
     public void Move(Vector2 pos)
     {       
         rb.MovePosition((Vector2)transform.position + (direction * settings.Move_Speed));
+    }
+
+    public void Attack(InputAction.CallbackContext ctx)
+    {
+        animator.SetTrigger("Attack");
     }
 }

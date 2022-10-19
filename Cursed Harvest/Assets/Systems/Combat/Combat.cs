@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public static class Combat
 {
     public static GameObject combatText_Prefab = Resources.Load<GameObject>(Path.Combine("Prefabs", "CombatText"));
-    public static GameObject sparks_Prefab = Resources.Load<GameObject>(Path.Combine("Particles", "Sparks"));
+    public static GameObject blood_effect = Resources.Load<GameObject>(Path.Combine("Effects", "Blood"));
     public static Transform worldCanvas = GameObject.Find("World_Canvas").transform;
     public static Stats player = GameObject.Find("Player").GetComponent<Stats>();
 
@@ -16,7 +16,7 @@ public static class Combat
         int damageDealt = 1 + attacker.power / (target.defense - attacker.armorPen) + 1;
         target.health -= damageDealt;
         SpawnCombatText(Color.red, damageDealt, 1.5f, target.transform.position + new Vector3(0,3,0));
-        GameObject sparks = Object.Instantiate(sparks_Prefab, target.transform.position + new Vector3(0, 3, 0), Quaternion.identity, target.transform);
+        GameObject sparks = Object.Instantiate(blood_effect, target.transform.position + new Vector3(0, 3, 0), Quaternion.identity, target.transform);
         Object.Destroy(sparks, 3);   
     }
     public static void SpawnCombatText(Color _color, int _damage, float _duration, Vector3 _location)
