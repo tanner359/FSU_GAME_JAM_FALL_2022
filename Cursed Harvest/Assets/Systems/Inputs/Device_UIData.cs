@@ -16,6 +16,7 @@ public class Device_UIData : ScriptableObject
             {
                 if(j.deviceName.Length-1 == i)
                 {
+                    Debug.Log("Platform Detected! -> Changed to (" + j.deviceName + ")");
                     return j;
                 }
                 else if(target_platform[i] == c)

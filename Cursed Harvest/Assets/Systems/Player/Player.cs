@@ -16,6 +16,16 @@ public class Player : MonoBehaviour
     {
         
     }
+
+    public void Enable_Damage()
+    {
+
+    }
+
+    public void Disable_Damage()
+    {
+
+    }
 }
 
 public class Player_Data

@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    AStarNavigation nav;
+    public GameObject target;
+    bool isDestination;
+    public bool isNavigating;
+    Node targetNode;
+    List<Node> path = new List<Node>();
+    Stats stats;
+
+    // Start is called before the first frame update
+    private void OnEnable()
+    {
+        nav = FindObjectOfType<AStarNavigation>();
+        target = Player_Controller.instance.gameObject;
+        stats = GetComponent<Stats>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Navigate();
+    }
+
+    #region MOVEMENT
+    private void Navigate()
+    {
+        if (!isNavigating) {
+            path = nav.FindPath(transform.position, target.transform.position);
+            isNavigating = true;
+        }
+        if(path.Count > 0)
+        {
+            Movement(path[0]);
+        }
+    }
+
+    void Movement(Node target)
+    {
+        if (target == null || Vector2.Distance(transform.position, target.position) < 0.1f) { isNavigating = false; return; }
+        Vector2 dir = (target.position - (Vector2)transform.position).normalized;
+        transform.position = transform.position + (Vector3)dir * Time.deltaTime * stats.speed;
+        CheckFlip(dir);
+    }
+    void CheckFlip(Vector2 inputValue)
+    {
+        if (inputValue.x > 0) { transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); }
+        else if (inputValue.x < 0) { transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); }
+    }
+    #endregion
+}
