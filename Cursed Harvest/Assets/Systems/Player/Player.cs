@@ -7,7 +7,7 @@ public class Player : MonoBehaviour, IDamagable
 {
     public GameObject weapon;
     public Stats stats;
-    bool attack;
+    public bool attack;
 
     // Start is called before the first frame update
     void Start()
@@ -36,11 +36,15 @@ public class Player : MonoBehaviour, IDamagable
 
     public void CheckHit()
     {
-        Collider2D[] hit = Physics2D.OverlapPointAll(weapon.transform.GetChild(0).position, 7);
+        Debug.Log("check hit");
+        Collider2D[] hit = Physics2D.OverlapPointAll(weapon.transform.GetChild(0).position);
         foreach(Collider2D c in hit)
         {
-            if(c.gameObject.TryGetComponent(out IDamagable target))
+            Debug.Log("hit: " + c.gameObject.name);
+
+            if (c.gameObject.TryGetComponent(out IDamagable target))
             {
+                Debug.Log("deal damage!");
                 target.Take_Damage(stats);
             }
         }

@@ -10,14 +10,15 @@ public class Enemy : MonoBehaviour, IDamagable
     public bool isNavigating;
     Node targetNode;
     List<Node> path = new List<Node>();
-    Stats stats;
+    public Stats stats;
     Rigidbody2D rb;
+    bool invinsible;
+
 
     private void OnEnable()
     {
         nav = FindObjectOfType<AStarNavigation>();
         target = Player_Controller.instance.gameObject;
-        stats = GetComponent<Stats>();
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
@@ -56,11 +57,22 @@ public class Enemy : MonoBehaviour, IDamagable
 
     public void Take_Damage(Stats source)
     {
-        Combat.DamageTarget(source, this.stats);
+        if (!invinsible)
+        {
+            Combat.DamageTarget(source, stats);
 
-        Vector2 directionOfDamage = (transform.position - source.transform.position).normalized;
-        rb.AddForce(directionOfDamage * source.knockback);
+            Vector2 directionOfDamage = (transform.position - source.transform.position).normalized;
+            rb.AddForce(directionOfDamage * source.knockback);
+
+            StartCoroutine(IFrames());
+            invinsible = true;
+        }
     }
 
+    public IEnumerator IFrames()
+    {
+        yield return new WaitForSeconds(0.3f);
+        invinsible = false;
+    }
     #endregion
 }
