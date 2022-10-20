@@ -15,6 +15,7 @@ public class UserInterface : MonoBehaviour
     public Canvas canvas;
 
     public GameObject pauseMenu;
+    public Animator mailBoxMenu;
 
     private Controls inputs;
 
@@ -107,6 +108,11 @@ public class UserInterface : MonoBehaviour
         }
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void Mail()
+    {
+        mailBoxMenu.SetTrigger("switch");
     }
 
     private void OnDisable()
