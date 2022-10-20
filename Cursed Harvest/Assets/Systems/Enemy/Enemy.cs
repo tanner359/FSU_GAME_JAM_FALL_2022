@@ -51,6 +51,18 @@ public class Enemy : MonoBehaviour, IDamagable
             return;
         }
         if (!isNavigating) {
+            Collider2D helper = Physics2D.OverlapCircle(transform.position, 3f, 7);
+            if(helper != null && helper.gameObject.TryGetComponent(out Enemy e))
+            {
+                if(e.path.Count > 0)
+                {
+                    path = e.path;
+                    isNavigating = true;
+                    isDestination = false;
+                    return;
+                }
+            }
+
             path = nav.FindPath(transform.position, target.transform.position);
             isNavigating = true;
             isDestination = false;
