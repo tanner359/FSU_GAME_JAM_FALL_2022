@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c4bceebf97788458f289edbfc45d39, type: 3}
   m_Name: Corn
   m_EditorClassIdentifier: 
-  seedName: 
-  growthTime: 0
-  spawn: {fileID: 0}
+  seedName: Corn Brawler
+  growthTime: 20
+  spawn: {fileID: 7753371474757116905, guid: 6817df2b62307024aa268084f3289cd9, type: 3}

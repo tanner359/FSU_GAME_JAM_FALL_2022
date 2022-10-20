@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seedName: Pumpkin Lord
   growthTime: 30
-  spawn: {fileID: 3466763892770914681, guid: c54ec28d913b1d542bfc5c994f3f66c6, type: 3}
+  spawn: {fileID: 4070473925327580554, guid: 7c0f1a6cefb63ae46b54108e6d27ac96, type: 3}
