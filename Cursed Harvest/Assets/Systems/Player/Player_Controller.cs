@@ -23,6 +23,15 @@ public class Player_Controller : MonoBehaviour
         Initialize_Input();
     }
 
+    public void Toggle_Input()
+    {
+        if (input.Player.enabled){
+            input.Player.Disable();
+            return;
+        }
+        input.Player.Enable();
+    }
+
     public void Initialize_Input()
     {
         if(input == null)

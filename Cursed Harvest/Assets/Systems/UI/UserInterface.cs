@@ -113,6 +113,7 @@ public class UserInterface : MonoBehaviour
     public void Mail()
     {
         mailBoxMenu.SetTrigger("switch");
+        Player_Controller.instance.Toggle_Input();
     }
 
     private void OnDisable()
