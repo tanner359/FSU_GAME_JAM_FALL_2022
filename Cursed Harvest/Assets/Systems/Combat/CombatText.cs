@@ -5,7 +5,7 @@ using TMPro;
 
 public class CombatText : MonoBehaviour
 {
-    public TextMeshPro meshPro;
+    public TextMeshProUGUI meshPro;
 
     static Color color;
     static int damage;

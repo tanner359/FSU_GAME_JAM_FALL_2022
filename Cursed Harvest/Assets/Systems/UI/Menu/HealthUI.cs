@@ -5,26 +5,27 @@ using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour
 {
-    public int health;
-    public int maxHealth;
+    public Image health;
+    public Image healthContainer;
+    public Character_Base character;
 
-    public Image[] leaves;
-    public Color[] healthColors;
+    public Color high, med, low;
 
-    public void UpdateUI(int currHealth)
+    private void Update()
     {
-        health = currHealth;
-        for (int i = 0; i < leaves.Length; i++)
+        health.rectTransform.sizeDelta = new Vector2((float)character.stats.health / character.stats.maxHealth * healthContainer.rectTransform.sizeDelta.x, health.rectTransform.sizeDelta.y);
+
+        if((float)character.stats.health / character.stats.maxHealth < 0.33f)
         {
-            if(i < health)
-            {
-                leaves[i].color = healthColors[0];
-            }
-            else
-            {
-                leaves[i].color = healthColors[1];
-            }
+            health.color = low;
+        }
+        else if ((float)character.stats.health / character.stats.maxHealth < 0.66f)
+        {
+            health.color = med;
+        }
+        else
+        {
+            health.color = high;
         }
     }
-
 }

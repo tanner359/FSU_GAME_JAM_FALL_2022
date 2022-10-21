@@ -24,9 +24,13 @@ public class Plot : MonoBehaviour, ISavable
         Load();
     }
 
-    public void Plant_Seed(Seed seed)
+    public void Plant_Seed(Player player)
     {
-        this.seed = seed;
+        int amountLeft = player.GetSeedAmount(player.SeedInHand.name);
+
+        if (amountLeft < 1){return;}
+        player.SetSeedAmount(player.SeedInHand.name, -1);
+        seed = player.SeedInHand;
         if(growth_Time == 0)
         {
             Growth_Time = seed.growthTime;

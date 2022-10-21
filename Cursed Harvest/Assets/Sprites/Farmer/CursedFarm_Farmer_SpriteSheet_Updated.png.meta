@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: 9d3460030414e6b44a72d386539a75ab
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_0
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 2758
+        width: 241
+        height: 477
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b244cc1a0a2f17740ab3a1da6ad8a2e4
+      internalID: 1696062881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_1
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 2757
+        width: 253
+        height: 461
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61aa1299068553545ba2f89b6ac6c546
+      internalID: 1537467537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_2
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 2757
+        width: 255
+        height: 463
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e098c3c593a7f84482ac6ef3768b72a
+      internalID: 390161770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_3
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 2153
+        width: 241
+        height: 476
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a605d4eb18921f4685b6346891886aa
+      internalID: -1819509083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_4
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 2157
+        width: 286
+        height: 506
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c4d613adf3c66488a4e05f008c5971
+      internalID: 51021791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_5
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 2145
+        width: 451
+        height: 432
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24290fdba737b5458bebb4d8da2c563
+      internalID: 270022699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_6
+      rect:
+        serializedVersion: 2
+        x: 2302
+        y: 2183
+        width: 260
+        height: 428
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae9d2bddff3cd546ba9f230e32e94b3
+      internalID: -881433947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_7
+      rect:
+        serializedVersion: 2
+        x: 2706
+        y: 2192
+        width: 518
+        height: 441
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28ac6b8a6fc2b24292586c2f72e79a6
+      internalID: -2076319992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_8
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 1414
+        width: 307
+        height: 477
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045132b32118e4d4aa1517716938c180
+      internalID: 1466298390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_9
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 1416
+        width: 308
+        height: 432
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4287be24581194840809423b79a10093
+      internalID: -861570706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_10
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1414
+        width: 308
+        height: 449
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688bf4c9afec0874ba0152d5b09e35ca
+      internalID: 670835016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_11
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 1478
+        width: 308
+        height: 439
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8bc8b4f2adecff4dbfa93afc6d35027
+      internalID: 1240861542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_12
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 622
+        width: 241
+        height: 474
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3a7806e0700134d94c2aa569128e2d
+      internalID: -539136936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_13
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 620
+        width: 272
+        height: 486
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b27b6013977d84c945c3509a48b33e
+      internalID: 645932388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_14
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 648
+        width: 395
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867cc5c0e475e4444a35991042dc884e
+      internalID: -1888529210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_15
+      rect:
+        serializedVersion: 2
+        x: 2301
+        y: 655
+        width: 220
+        height: 572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165692d08401a584c9b1a45babb12215
+      internalID: -1364922141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CursedFarm_Farmer_SpriteSheet_Updated_16
+      rect:
+        serializedVersion: 2
+        x: 2914
+        y: 640
+        width: 349
+        height: 370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0847eb2b7c29f4eb31418c22a115ed
+      internalID: -2040169596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CursedFarm_Farmer_SpriteSheet_Updated_3: -1819509083
+      CursedFarm_Farmer_SpriteSheet_Updated_9: -861570706
+      CursedFarm_Farmer_SpriteSheet_Updated_7: -2076319992
+      CursedFarm_Farmer_SpriteSheet_Updated_6: -881433947
+      CursedFarm_Farmer_SpriteSheet_Updated_11: 1240861542
+      CursedFarm_Farmer_SpriteSheet_Updated_2: 390161770
+      CursedFarm_Farmer_SpriteSheet_Updated_4: 51021791
+      CursedFarm_Farmer_SpriteSheet_Updated_13: 645932388
+      CursedFarm_Farmer_SpriteSheet_Updated_16: -2040169596
+      CursedFarm_Farmer_SpriteSheet_Updated_0: 1696062881
+      CursedFarm_Farmer_SpriteSheet_Updated_1: 1537467537
+      CursedFarm_Farmer_SpriteSheet_Updated_8: 1466298390
+      CursedFarm_Farmer_SpriteSheet_Updated_5: 270022699
+      CursedFarm_Farmer_SpriteSheet_Updated_10: 670835016
+      CursedFarm_Farmer_SpriteSheet_Updated_12: -539136936
+      CursedFarm_Farmer_SpriteSheet_Updated_14: -1888529210
+      CursedFarm_Farmer_SpriteSheet_Updated_15: -1364922141
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
