@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x 11
+  m_text: x 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -181,8 +181,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09, y: 0.6}
-  m_Size: {x: 1.5015035, y: 4.4788623}
+  m_Offset: {x: -0.08999998, y: -0.49853086}
+  m_Size: {x: 1.5015035, y: 2.2818007}
   m_Direction: 0
 --- !u!50 &713201075
 Rigidbody2D:
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 340607257, guid: 89116674e0bf5244eb16a23c0dec2eae, type: 3}
+  m_Sprite: {fileID: -301238358, guid: 4e92e49dc9c2516498a1367e48420bc8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -565,7 +565,7 @@ Transform:
   m_GameObject: {fileID: 8724129932230792215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.47, y: 1.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8724129931843228935}
@@ -612,8 +612,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 976951759
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: 552623014, guid: 673574fa1d693224eb440cc1268a69c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -692,7 +692,7 @@ MonoBehaviour:
   image: {fileID: 2133474592}
   pumpkinSeed: 0
   cornSeed: 0
-  cabbageSeed: 0
+  cabbageSeed: 5
 --- !u!114 &8724129932230792222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8724129932230792211}
   closestItem: {fileID: 0}
-  interactionRange: 1
+  interactionRange: 0.7
   showRange: 1
 --- !u!50 &8724129932230792221
 Rigidbody2D:
@@ -743,8 +743,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09, y: 0.86}
-  m_Size: {x: 1.5, y: 0.41402835}
+  m_Offset: {x: -0.089999914, y: 1.086092}
+  m_Size: {x: 1.500001, y: 0.9792595}
   m_Direction: 1
 --- !u!95 &8724129932230792216
 Animator:
