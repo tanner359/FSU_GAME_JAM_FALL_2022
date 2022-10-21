@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3466763892770914679}
   - component: {fileID: 3466763892770914680}
-  - component: {fileID: 3466763892770914678}
   - component: {fileID: 3466763892770914676}
   - component: {fileID: 3466763892770914677}
   - component: {fileID: 3466763892770914675}
@@ -89,26 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3466763892770914678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3466763892770914681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0096d960ba3fa1a4ca7930ba43bc4e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 0
-  armorPen: 0
-  critChance: 0
-  health: 100
-  maxHealth: 100
-  defense: 1
-  speed: 1
-  knockback: 0
 --- !u!50 &3466763892770914676
 Rigidbody2D:
   serializedVersion: 4
@@ -158,9 +137,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b31cb35ddc7d3d409dc3ac1785a515d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    power: 0
+    armorPen: 0
+    critChance: 0
+    health: 0
+    maxHealth: 0
+    defense: 0
+    speed: 0
+    knockback: 0
   target: {fileID: 0}
   isNavigating: 0
-  stats: {fileID: 3466763892770914678}
+  stats:
+    power: 0
+    armorPen: 0
+    critChance: 0
+    health: 0
+    maxHealth: 0
+    defense: 0
+    speed: 0
+    knockback: 0
   stopDistance: 0.5
 --- !u!95 &2529325303580309328
 Animator:

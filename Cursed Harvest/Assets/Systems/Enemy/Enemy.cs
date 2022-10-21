@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamagable
+public class Enemy : Character_Base, IDamagable
 {
     AStarNavigation nav;
     public GameObject target;
@@ -10,10 +10,11 @@ public class Enemy : MonoBehaviour, IDamagable
     public bool isNavigating;
     Node targetNode;
     List<Node> path = new List<Node>();
-    public Stats stats;
     Rigidbody2D rb;
     bool invinsible;
     SpriteRenderer sr;
+    public Collider2D hitBox;
+    public ContactFilter2D hitFilter;
 
     bool isActive;
     public void Activate(){isActive = true;}
@@ -36,6 +37,15 @@ public class Enemy : MonoBehaviour, IDamagable
         if(stats.health < 0)
         {
             Destroy(this.gameObject);
+        }
+
+        List<Collider2D> player = new List<Collider2D>();
+        if (Physics2D.OverlapCollider(hitBox, hitFilter, player) > 0)
+        {
+            if (player[0].transform.parent.TryGetComponent(out Player p) && !p.invincible)
+            {
+                p.GetComponent<IDamagable>().Take_Damage(this);
+            }
         }
     }
 
@@ -89,15 +99,15 @@ public class Enemy : MonoBehaviour, IDamagable
 
     #region COMBAT
 
-    public void Take_Damage(Stats source)
+    public void Take_Damage(Character_Base source)
     {
         if (!invinsible)
         {
             isNavigating = false;
-            Combat.DamageTarget(source, stats);
+            Combat.DamageTarget(source, this);
 
             Vector2 directionOfDamage = (transform.position - source.transform.position).normalized;
-            rb.AddForce(directionOfDamage * source.knockback, ForceMode2D.Impulse);
+            rb.AddForce(directionOfDamage * source.Stats.knockback, ForceMode2D.Impulse);
 
             StartCoroutine(IFrames());
             invinsible = true;
@@ -109,7 +119,7 @@ public class Enemy : MonoBehaviour, IDamagable
         sr.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         sr.color = Color.white;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
         invinsible = false;
         isNavigating = false;
     }
