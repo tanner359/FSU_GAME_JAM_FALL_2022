@@ -62,6 +62,23 @@ public class Player : Character_Base, IDamagable
         return -1;
     }
 
+    public void SetSeedAmount(string name, int amount)
+    {
+        switch (name)
+        {
+            case "Pumpkin":
+                pumpkinSeed += amount;
+                break;
+            case "Corn":
+                cornSeed += amount;
+                break;
+            case "Cabbage":
+                cabbageSeed += amount;
+                break;
+        }
+        this.amount.text = "x " + GetSeedAmount(name).ToString();
+    }
+
     public void Enable_Damage()
     {
         attack = true;

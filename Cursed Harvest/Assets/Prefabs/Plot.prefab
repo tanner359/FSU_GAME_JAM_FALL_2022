@@ -115,8 +115,8 @@ MonoBehaviour:
         m_MethodName: Plant_Seed
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: e332fc1490f73804882c9d514b852b0c, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Seed, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
           m_IntArgument: 30
           m_FloatArgument: 0
           m_StringArgument: 
