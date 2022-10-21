@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb0d6b509908c11498b5183583c5f6bd, type: 3}
   m_Name: Control_Setting_01
   m_EditorClassIdentifier: 
-  Move_Speed: 0.1
+  Move_Speed: 0.05
   Acceleration: 2
   Friction: 0.4
   horizontal_deadzone: 20
