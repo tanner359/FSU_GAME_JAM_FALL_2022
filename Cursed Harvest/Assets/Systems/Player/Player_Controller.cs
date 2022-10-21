@@ -64,6 +64,12 @@ public class Player_Controller : MonoBehaviour
         temp.x = Mathf.Abs(temp.x) > (h_deadzone/100) ? temp.x : 0;
 
         direction = temp;
+
+        if(temp == Vector2.zero)
+        {
+            animator.SetBool("Walk", false);
+        }
+        else { animator.SetBool("Walk", true); }
     }
 
     void CheckFlip(Vector2 inputValue)
