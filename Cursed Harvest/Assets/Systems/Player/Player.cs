@@ -2,14 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : Character_Base, IDamagable
 {
     public SpriteRenderer[] renders;
+    public AudioSource audioSrc;
     Rigidbody2D rb;
-    public GameObject weapon;
+    public Collider2D weaponPoint;
+    public ContactFilter2D targetFilter;
     public bool attack;
     public bool invincible;
+    private int points;
+    public int Points { get { return points; } set { points = value; } }
+
+
+    public Seed seedInHand;
+    public Seed SeedInHand { get { return seedInHand; } 
+        set {
+            image.sprite = value.image;
+            amount.text = "x " + GetSeedAmount(value.name).ToString();
+            seedInHand = value; 
+        } 
+    }
+    public TMP_Text amount;
+    public Image image;
+
+    public int pumpkinSeed = 0;
+    public int cornSeed = 0;
+    public int cabbageSeed = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +48,20 @@ public class Player : Character_Base, IDamagable
         }
     }
 
+    public int GetSeedAmount(string name)
+    {
+        switch (name)
+        {
+            case "Pumpkin":
+                return pumpkinSeed;
+            case "Corn":
+                return cornSeed;
+            case "Cabbage":
+                return cabbageSeed;
+        }
+        return -1;
+    }
+
     public void Enable_Damage()
     {
         attack = true;
@@ -36,17 +72,21 @@ public class Player : Character_Base, IDamagable
         attack = false;
     }
 
+    public void PlaySound(AudioClip clip)
+    {
+        audioSrc.pitch = Random.Range(0.90f, 1.10f);
+        audioSrc.PlayOneShot(clip);
+    }
+
     public void CheckHit()
     {
-        Debug.Log("check hit");
-        Collider2D[] hit = Physics2D.OverlapPointAll(weapon.transform.GetChild(0).position);
+        List<Collider2D> hit = new List<Collider2D>();
+        Physics2D.OverlapCollider(weaponPoint, targetFilter, hit);
         foreach(Collider2D c in hit)
         {
-            Debug.Log("hit: " + c.gameObject.name);
-
             if (c.transform.TryGetComponent(out IDamagable target))
             {
-                Debug.Log("deal damage!");
+                if(c.transform.gameObject.layer == 3) { return; }
                 target.Take_Damage(this);
             }
         }
@@ -68,7 +108,7 @@ public class Player : Character_Base, IDamagable
         invincible = true;
         foreach (SpriteRenderer sr in renders) { sr.color = Color.red; }
         yield return new WaitForSeconds(0.1f);
-        foreach (SpriteRenderer sr in renders) { sr.color = Color.blue; }
+        foreach (SpriteRenderer sr in renders) { sr.color = Color.white; }
         yield return new WaitForSeconds(0.2f);
         rb.simulated = false;
         rb.simulated = true;
@@ -81,6 +121,7 @@ public class Player_Data
     public int health;
     public int gameTime;
     public int scene;
+    public int points;
 }
 
 public interface IDamagable

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Cabbage
   m_EditorClassIdentifier: 
   seedName: Cabbage Devil
+  image: {fileID: -407099196, guid: 4e92e49dc9c2516498a1367e48420bc8, type: 3}
   growthTime: 3
   spawn: {fileID: 9194871292867266290, guid: d0b92acbd4ad9804681ef2389e0002a6, type: 3}

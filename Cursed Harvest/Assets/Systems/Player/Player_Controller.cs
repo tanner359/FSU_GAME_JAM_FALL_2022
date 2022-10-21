@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Player_Controller : MonoBehaviour
 {
     public static Player_Controller instance;
+    public Player player;
     public Controls input;
     public Player_Control_Settings settings;
     public Rigidbody2D rb;
@@ -40,6 +41,7 @@ public class Player_Controller : MonoBehaviour
             input.Player.Move.performed += SetDirection;
             input.Player.Move.canceled += SetDirection;
             input.Player.Attack.performed += Attack;
+            input.Player.Change_Seed.performed += Change_Seed;
             input.Player.Enable();
         }
     }
@@ -83,8 +85,57 @@ public class Player_Controller : MonoBehaviour
         rb.MovePosition((Vector2)transform.position + (direction * settings.Move_Speed));
     }
 
+    public int attackChain = 0;
+    public bool canAttack = true;
     public void Attack(InputAction.CallbackContext ctx)
     {
+        if (!canAttack) { return; }
+        StopAllCoroutines();
+        if (attackChain == 3)
+        {
+            animator.SetTrigger("Attack_02");
+            attackChain = 0;
+            StopAllCoroutines();
+            return;
+        }
         animator.SetTrigger("Attack");
+        attackChain++;
+        StartCoroutine(Chain_Decay());
     }
+
+    public IEnumerator Chain_Decay()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(0.4f);
+        canAttack = true;
+        yield return new WaitForSeconds(0.1f);
+        attackChain = 0;
+    }
+
+    public void Change_Seed(InputAction.CallbackContext ctx)
+    {
+        Seed[] seeds = Resources.LoadAll<Seed>("Plants");
+        Debug.Log(seeds.Length);
+        int i = 0;
+        foreach(Seed s in seeds)
+        {
+            if(s.name == player.SeedInHand.name)
+            {
+                if (seeds[seeds.Length - 1].name == s.name)
+                {
+                    player.SeedInHand = seeds[0];
+                }
+                else
+                {
+                    player.SeedInHand = seeds[i+1];
+                    return;
+                }
+            }
+            i++;
+        }
+    }
+
+
+
+
 }

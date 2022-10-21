@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Corn
   m_EditorClassIdentifier: 
   seedName: Corn Brawler
+  image: {fileID: 340607257, guid: 89116674e0bf5244eb16a23c0dec2eae, type: 3}
   growthTime: 20
   spawn: {fileID: 7753371474757116905, guid: 6817df2b62307024aa268084f3289cd9, type: 3}

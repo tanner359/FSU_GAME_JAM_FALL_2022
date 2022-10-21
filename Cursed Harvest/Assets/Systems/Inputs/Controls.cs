@@ -80,6 +80,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Change_Seed"",
+                    ""type"": ""Button"",
+                    ""id"": ""05f33269-3fe1-4247-b528-4692b7da9884"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -399,6 +408,28 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db09517e-a9f9-4001-bb4a-2c5e3c091d30"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Change_Seed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a52c961b-ec3a-48ed-aad7-cdc3bac333a8"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Change_Seed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1192,6 +1223,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Player_Confirm = m_Player.FindAction("Confirm", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+        m_Player_Change_Seed = m_Player.FindAction("Change_Seed", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1274,6 +1306,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Confirm;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Attack;
+    private readonly InputAction m_Player_Change_Seed;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -1284,6 +1317,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @Confirm => m_Wrapper.m_Player_Confirm;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
+        public InputAction @Change_Seed => m_Wrapper.m_Player_Change_Seed;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1311,6 +1345,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @Change_Seed.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChange_Seed;
+                @Change_Seed.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChange_Seed;
+                @Change_Seed.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChange_Seed;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1333,6 +1370,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @Change_Seed.started += instance.OnChange_Seed;
+                @Change_Seed.performed += instance.OnChange_Seed;
+                @Change_Seed.canceled += instance.OnChange_Seed;
             }
         }
     }
@@ -1544,6 +1584,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnConfirm(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnChange_Seed(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

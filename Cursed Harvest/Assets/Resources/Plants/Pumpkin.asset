@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Pumpkin
   m_EditorClassIdentifier: 
   seedName: Pumpkin Lord
+  image: {fileID: 1405136787, guid: 64ae772811b0c124e9d12d3d6a292784, type: 3}
   growthTime: 30
   spawn: {fileID: 4070473925327580554, guid: 7c0f1a6cefb63ae46b54108e6d27ac96, type: 3}

@@ -87,7 +87,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3466763892770914675, guid: c54ec28d913b1d542bfc5c994f3f66c6, type: 3}
       propertyPath: stats.knockback
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3466763892770914675, guid: c54ec28d913b1d542bfc5c994f3f66c6, type: 3}
       propertyPath: stats.maxHealth
