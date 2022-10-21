@@ -51,9 +51,7 @@ public class Player_Controller : MonoBehaviour
         if(direction != Vector2.zero)
         {
             Move(direction);
-        }
-        Vector2 pointer = Camera.main.ScreenToWorldPoint(input.Player.Pointer.ReadValue<Vector2>());
-        CheckFlip(pointer - (Vector2)transform.position);
+        }       
     }
 
     public void SetDirection(InputAction.CallbackContext ctx)
@@ -72,6 +70,8 @@ public class Player_Controller : MonoBehaviour
             animator.SetBool("Walk", false);
         }
         else { animator.SetBool("Walk", true); }
+
+        CheckFlip(temp);
     }
 
     void CheckFlip(Vector2 inputValue)
@@ -90,6 +90,8 @@ public class Player_Controller : MonoBehaviour
     public void Attack(InputAction.CallbackContext ctx)
     {
         if (!canAttack) { return; }
+        Vector2 pointer = Camera.main.ScreenToWorldPoint(input.Player.Pointer.ReadValue<Vector2>());
+        CheckFlip(pointer - (Vector2)transform.position);
         StopAllCoroutines();
         if (attackChain == 3)
         {
@@ -98,6 +100,7 @@ public class Player_Controller : MonoBehaviour
             StopAllCoroutines();
             return;
         }
+        
         animator.SetTrigger("Attack");
         attackChain++;
         StartCoroutine(Chain_Decay());
@@ -106,9 +109,9 @@ public class Player_Controller : MonoBehaviour
     public IEnumerator Chain_Decay()
     {
         canAttack = false;
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
         canAttack = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         attackChain = 0;
     }
 
