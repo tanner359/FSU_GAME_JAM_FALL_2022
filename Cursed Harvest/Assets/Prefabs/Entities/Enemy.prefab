@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 976951759
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 0.8207547, g: 0.39024562, b: 0.39024562, a: 1}
@@ -148,16 +148,22 @@ MonoBehaviour:
     knockback: 0
   target: {fileID: 0}
   isNavigating: 0
-  stats:
-    power: 0
-    armorPen: 0
-    critChance: 0
-    health: 0
-    maxHealth: 0
-    defense: 0
-    speed: 0
-    knockback: 0
-  stopDistance: 0.5
+  hitBox: {fileID: 0}
+  hitFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  stopDistance: 0.1
 --- !u!95 &2529325303580309328
 Animator:
   serializedVersion: 4

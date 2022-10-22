@@ -12,16 +12,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 665529428317471473, guid: 107e6c83374c7914b9723121e108603f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 665529428317471473, guid: 107e6c83374c7914b9723121e108603f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 665529428317471473, guid: 107e6c83374c7914b9723121e108603f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 665529428317471473, guid: 107e6c83374c7914b9723121e108603f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 665529428317471473, guid: 107e6c83374c7914b9723121e108603f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 665529428317471473, guid: 107e6c83374c7914b9723121e108603f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 9.313226e-10
       objectReference: {fileID: 0}
     - target: {fileID: 665529428317471473, guid: 107e6c83374c7914b9723121e108603f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -55,17 +67,29 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7ac8c14bd5048c549bb5b9d68db3c8bd, type: 3}
+    - target: {fileID: 665529428317471474, guid: 107e6c83374c7914b9723121e108603f, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 665529428317471480, guid: 107e6c83374c7914b9723121e108603f, type: 3}
       propertyPath: m_Name
       value: Soil_TL
       objectReference: {fileID: 0}
     - target: {fileID: 665529428317471484, guid: 107e6c83374c7914b9723121e108603f, type: 3}
       propertyPath: textPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 665529428317471484, guid: 107e6c83374c7914b9723121e108603f, type: 3}
       propertyPath: textPosition.y
-      value: 0
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 665529428317471484, guid: 107e6c83374c7914b9723121e108603f, type: 3}
+      propertyPath: textPosition.z
+      value: 9.313226e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 665529428317471485, guid: 107e6c83374c7914b9723121e108603f, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 107e6c83374c7914b9723121e108603f, type: 3}

@@ -13,6 +13,9 @@ public class Player : Character_Base, IDamagable
     public Collider2D weaponPoint;
     public ContactFilter2D targetFilter;
     public bool attack;
+    public int attackChain = 0;
+    float attackChaintime = 0;
+
     public bool invincible;
     private int points;
     public int Points { get { return points; } set { points = value; } }
@@ -46,6 +49,12 @@ public class Player : Character_Base, IDamagable
         {
             CheckHit();
         }
+
+        if(attackChaintime > 0)
+        {
+            attackChaintime -= Time.deltaTime;
+        }
+        else if(attackChain != 0) { Debug.Log("reset"); attackChain = 0;}
     }
 
     public int GetSeedAmount(string name)
@@ -81,6 +90,12 @@ public class Player : Character_Base, IDamagable
 
     public void Enable_Damage()
     {
+        if (attackChain < 3)
+        {
+            attackChaintime = 1f;
+            attackChain += 1;
+        }
+        else { attackChain = 0; }
         attack = true;
     }
 
