@@ -51,7 +51,7 @@ public class Enemy : Character_Base, IDamagable
 
     #region MOVEMENT
 
-    public float stopDistance = 0.5f;
+    public float stopDistance = 0f;
     private void Navigate()
     {
         if(Vector2.Distance(transform.position, target.transform.position) < stopDistance)
@@ -80,6 +80,10 @@ public class Enemy : Character_Base, IDamagable
         if(path.Count > 0)
         {
             Movement(path[0]);
+        }
+        else
+        {
+            isNavigating = false;
         }
     }
 

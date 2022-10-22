@@ -86,33 +86,17 @@ public class Player_Controller : MonoBehaviour
     }
 
     public int attackChain = 0;
-    public bool canAttack = true;
     public void Attack(InputAction.CallbackContext ctx)
     {
-        if (!canAttack) { return; }
+        if (player.attack == true) { return; }
         Vector2 pointer = Camera.main.ScreenToWorldPoint(input.Player.Pointer.ReadValue<Vector2>());
         CheckFlip(pointer - (Vector2)transform.position);
-        StopAllCoroutines();
-        if (attackChain == 3)
+        if (player.attackChain == 3)
         {
             animator.SetTrigger("Attack_02");
-            attackChain = 0;
-            StopAllCoroutines();
             return;
-        }
-        
+        }      
         animator.SetTrigger("Attack");
-        attackChain++;
-        StartCoroutine(Chain_Decay());
-    }
-
-    public IEnumerator Chain_Decay()
-    {
-        canAttack = false;
-        yield return new WaitForSeconds(0.3f);
-        canAttack = true;
-        yield return new WaitForSeconds(0.2f);
-        attackChain = 0;
     }
 
     public void Change_Seed(InputAction.CallbackContext ctx)
